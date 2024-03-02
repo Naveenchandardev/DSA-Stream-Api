@@ -10,7 +10,14 @@ public class Basics {
         toUpperCaseMethod_FromArray();  // convert string values to uppercase from array;
         toUpperCaseMethod_FromList();  // convert string values to uppercase from list;
         toUpperCase_First_letterOnly(); //convert to uppercase; firstletter only
+        sum_All_EvenNumbers(a);
     }
+
+    private static void sum_All_EvenNumbers(int[] a) {
+        int output = Arrays.stream(a).filter(x->x%2==0).sum();
+        System.out.println("sum of all even numbers:: "+output);
+    }
+
     private static void toUpperCase_First_letterOnly() {
         String[] strings = {"hello", "world", "java", "streams"};
         String[] firstLetterUpperCaseStrings = Arrays.stream(strings)
