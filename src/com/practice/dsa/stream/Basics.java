@@ -11,7 +11,7 @@ public class Basics {
         toUpperCaseMethod_FromList();  // convert string values to uppercase from list;
         toUpperCase_First_letterOnly(); //convert to uppercase; firstletter only
         sum_All_EvenNumbers(a);
-    }
+     }
 
     private static void sum_All_EvenNumbers(int[] a) {
         int output = Arrays.stream(a).filter(x->x%2==0).sum();
