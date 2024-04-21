@@ -61,17 +61,17 @@ public class Employee2 {
 
     public static void main(String[] args) {
         List<Employee2> employees = Arrays.asList(
-                new Employee2("Chandar", 4000, "male","software"),
-                new Employee2("Thiru", 5000, "male","Plsql"),
+                new Employee2("Chandar", 4000, "male","Software"),
+                new Employee2("Thiru", 5000, "male","Developer"),
                 new Employee2("Prem", 35000, "male","BPO"),
-                new Employee2("Mano", 60000, "Female","software"),
+                new Employee2("Mano", 60000, "Female","Software"),
                 new Employee2("Shankar", 15000, "male","BPO"),
                 new Employee2("Sathish", 70000, "Female","SAP"),
                 new Employee2("Ramya", 25000, "Female","BPO"));
         System.out.println("---------------------------------------");
         //print only male candidates
         System.out.println("Print male employees only :: ");
-        employees.stream().filter(x->x.getGender()=="male").forEach(System.out::println);
+        employees.stream().filter(x-> Objects.equals(x.getGender(), "male")).forEach(System.out::println);
         System.out.println("---------------------------------------");
 
         // print : group by gender and count
@@ -109,11 +109,11 @@ public class Employee2 {
         empName.forEach(System.out::println);
         System.out.println("---------------------------------------");
 
-
         // find highest salary only
         double highestsalary2= employees.stream().mapToDouble(Employee2::getSalary).max().getAsDouble();
         System.out.println("Overall highest salary :: "+highestsalary2);
         System.out.println("---------------------------------------");
+
         // Print employees grouped by department
         System.out.println("Print employees based on department");
         Map<String,List<Employee2>> groupBy = employees.stream().collect(groupingBy(Employee2::getDepartment));
