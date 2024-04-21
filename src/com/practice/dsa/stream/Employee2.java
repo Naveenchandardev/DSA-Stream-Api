@@ -2,6 +2,7 @@ package com.practice.dsa.stream;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
 
@@ -101,6 +102,13 @@ public class Employee2 {
                 .skip(1).findFirst();
         System.out.println("Second Highest Salary in the organisation : " + empHighest.get().getSalary());
         System.out.println("---------------------------------------");
+
+        // find highest 2nd salary ;
+        System.out.println("Print by names;");
+        List<Employee2> empName = employees.stream().sorted(Comparator.comparing(Employee2::getName)).toList();
+        empName.forEach(System.out::println);
+        System.out.println("---------------------------------------");
+
 
         // find highest salary only
         double highestsalary2= employees.stream().mapToDouble(Employee2::getSalary).max().getAsDouble();
