@@ -3,6 +3,8 @@ package com.practice.dsa.stream;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static java.util.stream.Collectors.groupingBy;
+
 public class Employee2 {
 
     private String name;
@@ -63,25 +65,52 @@ public class Employee2 {
                 new Employee2("Prem", 35000, "male","BPO"),
                 new Employee2("Mano", 60000, "Female","software"),
                 new Employee2("Shankar", 15000, "male","BPO"),
-                new Employee2("Sathish", 60000, "Female","SAP"),
+                new Employee2("Sathish", 70000, "Female","SAP"),
                 new Employee2("Ramya", 25000, "Female","BPO"));
 
         //print only male candidates
+        System.out.println("Print male employees only ::");
         employees.stream().filter(x->x.getGender()=="male").forEach(System.out::println);
-
+        System.out.println();
         // print : group by gender and count
-        Map<String,Long> res = employees.stream().collect(Collectors.groupingBy(Employee2::getGender,Collectors.counting()));
+        System.out.println("print no of male and female");
+        Map<String,Long> res = employees.stream().collect(groupingBy(Employee2::getGender,Collectors.counting()));
         System.out.println(res);
+        System.out.println();
 
-        //find highest salary:
+        System.out.println("print highest salary based on department");
+        Map<String, Optional<Employee2>> highestPaidMFEmployee = employees.stream().collect(Collectors.groupingBy(Employee2::getDepartment,
+                Collectors.maxBy((t1, t2) -> t1.getSalary() - t2.getSalary())));
+        System.out.println("Highest paid  employee based on department is : " + highestPaidMFEmployee);
+        System.out.println();
+        //find highest salary person:
         Optional<Employee2> highestsarlary= employees.stream().max(Comparator.comparingDouble(Employee2::getSalary));
-        highestsarlary.ifPresent(x-> System.out.println("highest Sarlary is:: "+x.getSalary()));
+        highestsarlary.ifPresent(x-> System.out.println("highest salary person is:: "+x.getName()+" and  salary is :: "+x.getSalary()));
+        System.out.println();
+        // find highest 2nd salary ;
+        Optional<Employee2> empHighest = employees.stream().sorted(Comparator.comparingDouble(Employee2::getSalary).reversed())
+                .skip(1).findFirst();
+        System.out.println("Second Highest Salary in the organisation : " + empHighest.get().getSalary());
+        System.out.println();
+
+        // find highest salary only
+        double highestsalary2= employees.stream().mapToDouble(Employee2::getSalary).max().getAsDouble();
+        System.out.println("overall highest salary :: "+highestsalary2);System.out.println();
+
 
         // Print employees grouped by department
-        Map<String,List<Employee2>> groupBy = employees.stream().collect(Collectors.groupingBy(Employee2::getDepartment));
+        Map<String,List<Employee2>> groupBy = employees.stream().collect(groupingBy(Employee2::getDepartment));
         groupBy.forEach((department, empList) -> {
             System.out.println("Department: " + department);
-            empList.forEach(emp -> System.out.println("    " + emp.getName() + " (Salary: " + emp.getSalary() + ")"));
+            empList.forEach(emp ->  System.out.println("    " + emp.getName() + " (Salary: " + emp.getSalary() + ")"));
         });
+        System.out.println();
+
+      //Print Average age of Male and Female Employees
+        Map<String, Double> avgAge = employees.stream().collect(Collectors.groupingBy
+                (Employee2::getGender,Collectors.averagingInt(Employee2::getSalary)));
+        System.out.println("Average salary of Male and Female Employees:: " + avgAge);
+        System.out.println();
+
     }
 }
