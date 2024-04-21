@@ -69,13 +69,18 @@ public class Employee2 {
                 new Employee2("Ramya", 25000, "Female","BPO"));
 
         //print only male candidates
-        System.out.println("Print male employees only ::");
+        System.out.println("Print male employees only :: ");
         employees.stream().filter(x->x.getGender()=="male").forEach(System.out::println);
         System.out.println();
         // print : group by gender and count
         System.out.println("print no of male and female");
         Map<String,Long> res = employees.stream().collect(groupingBy(Employee2::getGender,Collectors.counting()));
         System.out.println(res);
+        System.out.println();
+        //Print Average age of Male and Female Employees
+        Map<String, Double> avgAge = employees.stream().collect(Collectors.groupingBy
+                (Employee2::getGender,Collectors.averagingInt(Employee2::getSalary)));
+        System.out.println("Average salary of Male and Female Employees:: " + avgAge);
         System.out.println();
 
         System.out.println("print highest salary based on department");
@@ -92,25 +97,16 @@ public class Employee2 {
                 .skip(1).findFirst();
         System.out.println("Second Highest Salary in the organisation : " + empHighest.get().getSalary());
         System.out.println();
-
         // find highest salary only
         double highestsalary2= employees.stream().mapToDouble(Employee2::getSalary).max().getAsDouble();
         System.out.println("overall highest salary :: "+highestsalary2);System.out.println();
-
-
         // Print employees grouped by department
+        System.out.println("Print employees based on department");
         Map<String,List<Employee2>> groupBy = employees.stream().collect(groupingBy(Employee2::getDepartment));
         groupBy.forEach((department, empList) -> {
             System.out.println("Department: " + department);
             empList.forEach(emp ->  System.out.println("    " + emp.getName() + " (Salary: " + emp.getSalary() + ")"));
         });
         System.out.println();
-
-      //Print Average age of Male and Female Employees
-        Map<String, Double> avgAge = employees.stream().collect(Collectors.groupingBy
-                (Employee2::getGender,Collectors.averagingInt(Employee2::getSalary)));
-        System.out.println("Average salary of Male and Female Employees:: " + avgAge);
-        System.out.println();
-
     }
 }
