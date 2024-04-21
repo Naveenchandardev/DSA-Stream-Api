@@ -85,7 +85,7 @@ public class Employee2 {
 
         System.out.println("print highest salary based on department");
         Map<String, Optional<Employee2>> highestPaidMFEmployee = employees.stream().collect(Collectors.groupingBy(Employee2::getDepartment,
-                Collectors.maxBy((t1, t2) -> t1.getSalary() - t2.getSalary())));
+                Collectors.maxBy(Comparator.comparingInt(Employee2::getSalary))));
         System.out.println("Highest paid  employee based on department is : " + highestPaidMFEmployee);
         System.out.println();
         //find highest salary person:
