@@ -1,0 +1,11 @@
+
+V	java:S125	"<This block of commented-out lines of code should be removed.(èİ¬âüÿÿÿÿ
+Q	java:S125
+"<This block of commented-out lines of code should be removed.(‰ğÙ¶
+V	java:S125"<This block of commented-out lines of code should be removed.(ƒÿéÃúÿÿÿÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ûÓäşøÿÿÿÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(áÏÍ§ûÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‡Ïß€
+
+java:S6204""zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹
+c	java:S100&"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒŸûú

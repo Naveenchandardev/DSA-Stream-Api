@@ -1,0 +1,11 @@
+
+±
+java:S1192G"iDefine a constant instead of duplicating this literal "---------------------------------------" 10 times.(™çšùÿÿÿÿ8›„‹ó1J$4e96c2bd-0799-4251-8aab-45c50ff8af1b
+
+java:S1192C"GDefine a constant instead of duplicating this literal "Female" 3 times.(µğÉËÿÿÿÿÿ8œ„‹ó1J$05df832f-7e13-477c-a8d9-037726852a08
+q
+java:S3655g"TCall "empHighest.isPresent()" or "!empHighest.isEmpty()" before accessing the value.(õöÄÿ8àà‹Ôü1
+]	java:S125d"<This block of commented-out lines of code should be removed.(¸Õ„õÿÿÿÿÿ8Œá‹Ôü1
+]	java:S125j"<This block of commented-out lines of code should be removed.(¸Õ„õÿÿÿÿÿ8”á‹Ôü1
+w
+java:S1128"4Remove this unused import 'java.util.stream.Stream'.(ó÷”8Ú™”ó1J$f622dee1-45ba-4cda-a07e-d6beb2baf98d
