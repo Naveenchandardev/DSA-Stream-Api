@@ -86,7 +86,6 @@ public class Employee2 {
         System.out.println("Average salary of Male and Female Employees:: " + avgAge);
         System.out.println("---------------------------------------");
 
-        System.out.println("print highest salary based on department");
         Map<String, Optional<Employee2>> highestPaidMFEmployee = employees.stream().collect(Collectors.groupingBy(Employee2::getDepartment,
                 Collectors.maxBy(Comparator.comparingInt(Employee2::getSalary))));
         System.out.println("Highest paid  employee based on department is : " + highestPaidMFEmployee);
@@ -103,7 +102,6 @@ public class Employee2 {
         System.out.println("Second Highest Salary in the organisation : " + empHighest.get().getSalary());
         System.out.println("---------------------------------------");
 
-        // find highest 2nd salary ;
         System.out.println("Print by names;");
         List<Employee2> empName = employees.stream().sorted(Comparator.comparing(Employee2::getName)).toList();
         empName.forEach(System.out::println);
