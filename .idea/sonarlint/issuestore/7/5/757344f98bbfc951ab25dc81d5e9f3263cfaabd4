@@ -1,0 +1,8 @@
+
+f
+java:S2259J"KA "NullPointerException" could be thrown; "expensiveBook" is nullable here.(†¤’¶úÿÿÿÿ
+Q	java:S125;"<This block of commented-out lines of code should be removed.(®™Ëˆ
+V	java:S125A"<This block of commented-out lines of code should be removed.(‘Ì£®øÿÿÿÿ
+Q	java:S125F"<This block of commented-out lines of code should be removed.(±–Ñ³
+
+java:S6204O"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(¦š)

@@ -9,3 +9,15 @@ Y
 )src/com/practice/dsa/stream/Employee.java,5\f\5fcfab58f722df077117b8ac0cb42d2a7cc21655
 |
 Lsrc/com/practice/dsa/stream/functionalInterface/EvenOddPredicateExample.java,c\e\ceaac5931826a49919850263f01659bdea56be79
+[
++src/com/practice/dsa/stream/Palindrome.java,e\6\e6234b36a9c61a9af20ff7975229e64766933ad0
+X
+(src/com/practice/dsa/stream/Sorting.java,e\b\eb77f731ee39236c8c2ce93cbfc53b2d205ca5a7
+d
+4src/com/practice/dsa/stream/String_manipulation.java,d\4\d41d8d826f871398a543b37cf08226be33c02cdc
+U
+%src/com/practice/dsa/stream/Book.java,7\5\757344f98bbfc951ab25dc81d5e9f3263cfaabd4
+^
+.src/com/practice/dsa/stream/FilterMethods.java,9\9\99c00af0d8b6b87c8b13cd8f056af0898a49ff84
+g
+7src/com/practice/dsa/stream/multithreading/MyClass.java,0\6\06f262cb183d861417f538876ced0d204c0d609d

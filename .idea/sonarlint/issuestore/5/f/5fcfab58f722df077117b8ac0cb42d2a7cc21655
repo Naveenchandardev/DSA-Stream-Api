@@ -1,4 +1,4 @@
 
-w	java:S125'"<This block of commented-out lines of code should be removed.(àåƒ‡J$bc6ebd75-b990-42ce-946a-988eb6e1c6cf
-¶
-java:S62047"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹J$24db0d56-21a0-42b4-8e1b-39c237b95556
+~	java:S125'"<This block of commented-out lines of code should be removed.(àåƒ‡8şÓ¶¥„2J$6d025891-edbf-489d-b5c9-552f2b5c2a4e
+½
+java:S62047"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(ª™¨¹8Ô¶¥„2J$51f804ba-99eb-4ed8-a70f-7f6558ab422e

@@ -1,7 +1,7 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æ´Î8æÄ±Ôü1J$25edac81-b561-4b60-b1d8-fa864e34df8c
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(æ´Î8æÄ±Ôü1J$b1e418a2-e648-4401-b04a-f84d5553a386
 •
 java:S4276
-"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(›çµ8Å±Ôü1J$bab59635-7edc-41e1-800b-37dd580d9343
+"RRefactor this code to use the more specialised Functional Interface 'IntPredicate'(›çµ8Å±Ôü1J$a22d9596-d56e-4ae9-900d-4a60b12daaf2
 ½
-java:S6204"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(œıá8‘Å±Ôü1J$8f2642fb-fa4e-4236-a76e-f653de5964d7
+java:S6204"zReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()' and ensure that the list is unmodified.(œıá8‘Å±Ôü1J$6e106b56-d9b8-4b13-ba23-4a5d3e538059
