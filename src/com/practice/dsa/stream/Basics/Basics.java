@@ -1,4 +1,4 @@
-package com.practice.dsa.stream;
+package com.practice.dsa.stream.Basics;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
