@@ -1,6 +1,7 @@
 package com.practice.dsa.stream.Basics;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class Basics {
@@ -11,7 +12,16 @@ public class Basics {
         toUpperCaseMethod_FromList();  // convert string values to uppercase from list;
         toUpperCase_First_letterOnly(); //convert to uppercase; firstletter only
         sum_All_EvenNumbers(a);
+        removeDuplicates(a);
      }
+
+    private static void removeDuplicates(int[] a) {
+        Set<Integer> set =
+                Arrays.stream(a)     // IntStream
+                        .boxed()       // convert int → Integer
+                        .collect(Collectors.toSet());
+        System.out.println("removeDuplicates: " +set);
+    }
 
     private static void sum_All_EvenNumbers(int[] a) {
         int output = Arrays.stream(a).filter(x->x%2==0).sum();

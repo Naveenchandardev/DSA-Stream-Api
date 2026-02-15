@@ -1,4 +1,4 @@
-package com.practice.dsa.stream;
+package com.practice.dsa.stream.entity;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;

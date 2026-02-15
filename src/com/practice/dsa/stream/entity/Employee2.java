@@ -1,8 +1,7 @@
-package com.practice.dsa.stream;
+package com.practice.dsa.stream.entity;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.groupingBy;
 
