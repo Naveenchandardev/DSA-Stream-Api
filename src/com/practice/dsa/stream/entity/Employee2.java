@@ -129,6 +129,19 @@ public class Employee2 {
                                         Optional::get
                                 )
                         ));
-        System.out.println("Highest salary by department : "+result);
+        System.out.println("Highest salary employee details by department : "+result);
+
+        System.out.println("---------------------------------------");
+        Map<String, Integer> result2 =
+                employees.stream()
+                        .collect(Collectors.groupingBy(
+                                Employee2::getDepartment,
+                                Collectors.collectingAndThen(
+                                        Collectors.maxBy(Comparator.comparing(Employee2::getSalary)),
+                                        e -> e.get().getSalary()
+                                )
+                        ));
+        System.out.println("Highest salary by department : "+result2);
     }
+
 }
