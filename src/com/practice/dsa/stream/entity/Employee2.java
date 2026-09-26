@@ -142,6 +142,12 @@ public class Employee2 {
                                 )
                         ));
         System.out.println("Highest salary by department : "+result2);
+
+        System.out.println("---------------------------------------");
+        Map<String,Integer> employCount = employees.stream().collect(groupingBy(Employee2::getDepartment,
+                Collectors.collectingAndThen(Collectors.toList(), List::size)));
+
+        System.out.println("Employee counts by department : "+ employCount);
     }
 
 }
