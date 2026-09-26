@@ -60,7 +60,12 @@ public class Book {
         books.stream().filter(x->x.getYear()>2000).
                 map(Book::getTitle).
                 forEach(x-> System.out.println("Books after Published 2000:- "+x));
-        System.out.println();
+
+        //save and pring booknames
+      List<String> booknames =   books.stream().filter(x->x.getYear()>2000).
+                map(Book::getTitle).
+                toList();
+        System.out.println("booknames: "+booknames);
 
         //total price of books;
         double totalPrice =books.stream().mapToDouble(Book::getPrice).sum();
@@ -76,7 +81,7 @@ public class Book {
 
         List<Book> newBooks = books.stream().
                 filter(book -> book.getPrice()<300).
-                collect(Collectors.toList());
+                toList();
         System.out.println("Price greater than 300 books list: ");
         System.out.println();
         newBooks.forEach(x->System.out.println("Title -"+x.getTitle()+"\nAuthor-"+x.getAuthor()+"\nPrice- "+x.price+"\n"));
