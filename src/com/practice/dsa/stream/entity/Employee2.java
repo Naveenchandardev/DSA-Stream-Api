@@ -85,7 +85,8 @@ public class Employee2 {
         System.out.println("Average salary of Male and Female Employees:: " + avgAge);
         System.out.println("---------------------------------------");
 
-        Map<String, Optional<Employee2>> highestPaidMFEmployee = employees.stream().collect(Collectors.groupingBy(Employee2::getDepartment,
+        Map<String, Optional<Employee2>> highestPaidMFEmployee = employees.stream().collect(
+                Collectors.groupingBy(Employee2::getDepartment,
                 Collectors.maxBy(Comparator.comparingInt(Employee2::getSalary))));
         System.out.println("Highest paid  employee based on department is : " + highestPaidMFEmployee);
         System.out.println("---------------------------------------");
@@ -187,6 +188,13 @@ public class Employee2 {
                 ));
 
         System.out.println(total);
+        System.out.println("---------------------------------------");
+
+        Employee2 longestName = employees.stream()
+                .max(Comparator.comparingInt(e -> e.getName().length()))
+                .orElse(null);
+
+        System.out.println(longestName);
         System.out.println("---------------------------------------");
     }
 
