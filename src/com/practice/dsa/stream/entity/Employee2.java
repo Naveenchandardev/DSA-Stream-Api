@@ -220,9 +220,21 @@ public class Employee2 {
 
             System.out.println(department + " → " + secondHighest);
         });
+        System.out.println("---------------------------------------");
 
+        Map<String, List<Employee2>> limit2ByDept = employees.stream()
+                .collect(Collectors.groupingBy(Employee2::getDepartment));
 
+        limit2ByDept.forEach((department, list) -> {
 
+            List<Employee2> top2 = list.stream()
+                    .sorted(Comparator.comparing(Employee2::getSalary).reversed())
+                    .limit(2)
+                    .toList();
+
+            System.out.println(department + " → " + top2);
+        });
+        System.out.println("---------------------------------------");
 
     }
 }
