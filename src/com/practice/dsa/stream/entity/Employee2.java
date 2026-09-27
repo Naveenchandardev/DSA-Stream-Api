@@ -236,5 +236,24 @@ public class Employee2 {
         });
         System.out.println("---------------------------------------");
 
+
+        Map<String, Long> countByDepartment = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee2::getDepartment,
+                        Collectors.counting()
+                ));
+
+        Map.Entry<String, Long> maxEmployee = countByDepartment.entrySet()
+                .stream()
+                .max(Map.Entry.comparingByValue())
+                .orElse(null);
+
+        System.out.println(maxEmployee);
+        System.out.println("---------------------------------------");
+
+
+
+
+
     }
 }
