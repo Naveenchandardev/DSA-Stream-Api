@@ -139,16 +139,17 @@ public class Employee2 {
         System.out.println("---------------------------------------");
 
 
-        Map<String, Integer> result2 =
-                employees.stream()
-                        .collect(Collectors.groupingBy(
-                                Employee2::getDepartment,
-                                Collectors.collectingAndThen(
-                                        Collectors.maxBy(Comparator.comparing(Employee2::getSalary)),
-                                        e -> e.get().getSalary()
-                                )
-                        ));
-        System.out.println("Highest salary by department : "+result2);
+        Map<String, Integer> highSalaryByDep = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee2::getDepartment,
+                        Collectors.maxBy(Comparator.comparing(Employee2::getSalary))
+                ))
+                .entrySet()
+                .stream()
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        entry -> entry.getValue().get().getSalary()
+                ));        System.out.println("Highest salary by department : "+highSalaryByDep);
         System.out.println("---------------------------------------");
 
 
