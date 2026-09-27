@@ -152,6 +152,34 @@ public class Employee2 {
                 Collectors.collectingAndThen(Collectors.toList(), List::size)));
 
         System.out.println("Employee counts by department : "+ employCount);
+
+        System.out.println("---------------------------------------");
+        List<Employee2> sorted = employees.stream().sorted(Comparator.comparing(Employee2::getDepartment)
+                .thenComparing(Employee2::getSalary)).toList();
+        System.out.println(sorted);
+        System.out.println("---------------------------------------");
+        Map<String, Long> morethan = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee2::getDepartment,
+                        Collectors.counting()
+                ))
+                .entrySet()
+                .stream()
+                .filter(entry -> entry.getValue() > 2)
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue
+                ));
+
+        System.out.println( "departments having more than 2 employees : "+morethan);
+        System.out.println("---------------------------------------");
+        Map<String, Double> total = employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee2::getDepartment,
+                        Collectors.summingDouble(Employee2::getSalary)
+                ));
+
+        System.out.println(total);
     }
 
 }

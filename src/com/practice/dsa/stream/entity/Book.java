@@ -61,7 +61,7 @@ public class Book {
                 map(Book::getTitle).
                 forEach(x-> System.out.println("Books after Published 2000:- "+x));
         System.out.println();
-        
+
         //save and pring booknames
       List<String> booknames =   books.stream().filter(x->x.getYear()>2000).
                 map(Book::getTitle).
