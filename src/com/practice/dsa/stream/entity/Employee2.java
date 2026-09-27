@@ -205,6 +205,24 @@ public class Employee2 {
                 .toList();
 
         top3.forEach(System.out::println);
-    }
+        System.out.println("---------------------------------------");
 
+        Map<String, List<Employee2>> grouped = employees.stream()
+                .collect(Collectors.groupingBy(Employee2::getDepartment));
+
+        grouped.forEach((department, list) -> {
+
+            Employee2 secondHighest = list.stream()
+                    .sorted(Comparator.comparing(Employee2::getSalary).reversed())
+                    .skip(1)
+                    .findFirst()
+                    .orElse(null);
+
+            System.out.println(department + " → " + secondHighest);
+        });
+
+
+
+
+    }
 }
