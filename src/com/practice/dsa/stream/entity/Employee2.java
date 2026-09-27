@@ -134,8 +134,9 @@ public class Employee2 {
                                 )
                         ));
         System.out.println("Highest salary employee details by department : "+result);
-
         System.out.println("---------------------------------------");
+
+
         Map<String, Integer> result2 =
                 employees.stream()
                         .collect(Collectors.groupingBy(
@@ -146,18 +147,22 @@ public class Employee2 {
                                 )
                         ));
         System.out.println("Highest salary by department : "+result2);
-
         System.out.println("---------------------------------------");
+
+
         Map<String,Integer> employCount = employees.stream().collect(groupingBy(Employee2::getDepartment,
                 Collectors.collectingAndThen(Collectors.toList(), List::size)));
 
         System.out.println("Employee counts by department : "+ employCount);
-
         System.out.println("---------------------------------------");
+
+
         List<Employee2> sorted = employees.stream().sorted(Comparator.comparing(Employee2::getDepartment)
                 .thenComparing(Employee2::getSalary)).toList();
         System.out.println(sorted);
         System.out.println("---------------------------------------");
+
+
         Map<String, Long> morethan = employees.stream()
                 .collect(Collectors.groupingBy(
                         Employee2::getDepartment,
@@ -173,6 +178,8 @@ public class Employee2 {
 
         System.out.println( "departments having more than 2 employees : "+morethan);
         System.out.println("---------------------------------------");
+
+
         Map<String, Double> total = employees.stream()
                 .collect(Collectors.groupingBy(
                         Employee2::getDepartment,
@@ -180,6 +187,7 @@ public class Employee2 {
                 ));
 
         System.out.println(total);
+        System.out.println("---------------------------------------");
     }
 
 }
