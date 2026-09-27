@@ -120,6 +120,10 @@ public class Employee2 {
         });
         System.out.println("---------------------------------------");
 
+        Map<String, List<Employee2>> groupbyDepartment = employees.stream().collect(groupingBy(Employee2::getDepartment));
+        System.out.println("groupbyDepartment :" + groupbyDepartment);
+        System.out.println("---------------------------------------");
+
         Map<String, Employee2> result =
                 employees.stream()
                         .collect(Collectors.groupingBy(
