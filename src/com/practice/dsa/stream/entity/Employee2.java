@@ -198,6 +198,13 @@ public class Employee2 {
 
         System.out.println(longestName);
         System.out.println("---------------------------------------");
+
+        List<Employee2> top3 = employees.stream()
+                .sorted(Comparator.comparing(Employee2::getSalary).reversed())
+                .limit(3)
+                .toList();
+
+        top3.forEach(System.out::println);
     }
 
 }
